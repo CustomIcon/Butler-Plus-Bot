@@ -19,27 +19,18 @@ if ENV:
     # Logger
     logger = os.environ.get('LOGGER', True)
     time_country = os.environ.get("time_country", None)
-
     # Must be filled
     api_id = os.environ.get('api_id', None)
     api_hash = os.environ.get('api_hash', None)
-
     # From config
-    Command = os.environ.get("Command", "! . - ^").split()
     BUTLER_WORKER = int(os.environ.get('ASSISTANT_WORKER', 2))
-
     try:
         TEST_DEVELOP = bool(os.environ.get('TEST_DEVELOP', False))
     except AttributeError:
         pass
-
-    # APIs
-    lydia_api = os.environ.get('lydia_api', None)
-    sw_api = os.environ.get('sw_api', None)
     # LOADER
     BUTLER_LOAD = os.environ.get("BUTLER_LOAD", "").split()
     BUTLER_NOLOAD = os.environ.get("BUTLER_NOLOAD", "").split()
-
     DB_URI = os.environ.get('DB_URI', "postgres://username:password@localhost:5432/database")
     BUTLER_TOKEN = os.environ.get('BUTLER_TOKEN', None)
     SUDO = [int(x) for x in os.environ.get("SUDO", "").split()]
@@ -48,22 +39,14 @@ else:
     # logger
     logger = Config.LOGGER
     # Version
-
     # Must be filled
     api_id = Config.api_id
     api_hash = Config.api_hash
-
     # From config
-    Command = Config.Command
     BUTLER_WORKER = Config.BUTLER_WORKER
-
-    # APIs
-    sw_api = Config.sw_api
-    lydia_api = Config.lydia_api
     # LOADER
     BUTLER_LOAD = Config.BUTLER_LOAD
     BUTLER_NOLOAD = Config.BUTLER_NOLOAD
-
     DB_URI = Config.DB_URI
     BUTLER_TOKEN = Config.BUTLER_TOKEN
     SUDO = Config.SUDO
@@ -77,10 +60,8 @@ BotID = 0
 Owner = 0
 BotName = ""
 OwnerUsername = ""
-
 DB_AVAILABLE = False
 BOTINLINE_AVAIABLE = False
-
 
 # Postgresql
 def mulaisql() -> scoped_session:
