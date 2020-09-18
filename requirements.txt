@@ -1,0 +1,6 @@
+googletrans
+pyrogram
+speedtest-cli
+aiohttp
+sqlalchemy
+emoji
