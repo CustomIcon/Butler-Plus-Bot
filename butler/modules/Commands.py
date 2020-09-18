@@ -7,7 +7,6 @@ from butler.modules.start import start
 from butler.modules.help import help_command
 from butler.modules.locks import view_perm
 from butler.modules.whois import whois
-from butler.modules.stickers import stickerid, getsticker, steal
 from butler.modules.speedtest import speedtestxyz
 from butler.modules.paste import paste
 from butler.modules.translate import translate
@@ -45,9 +44,6 @@ handlers = [
     MessageHandler(unban_usr, custom_filters.command('unban')),
     MessageHandler(promote_usr, custom_filters.command('promote')),
     MessageHandler(demote_usr, custom_filters.command('demote')),
-    MessageHandler(stickerid, custom_filters.command('stickerid')),
-    MessageHandler(getsticker, custom_filters.command('getsticker')),
-    MessageHandler(steal, custom_filters.command('kang')),
     MessageHandler(speedtestxyz, custom_filters.command('speedtest') & filters.user(SUDO)),
     MessageHandler(evaluate, custom_filters.command('py') & filters.user(SUDO)),
     MessageHandler(terminal, custom_filters.command('exec') & filters.user(SUDO)),
