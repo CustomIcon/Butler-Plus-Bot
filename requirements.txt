@@ -1,6 +1,8 @@
 googletrans
 pyrogram
+tgcrypto
 speedtest-cli
 aiohttp
 sqlalchemy
 emoji
+psycopg2
