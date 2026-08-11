@@ -61,7 +61,7 @@ async def except_hook(errtype, value, tback):
     sys.__excepthook__(errtype, value, tback)
     errors = traceback.format_exception(etype=errtype, value=value, tb=tback)
     button = InlineKeyboardMarkup([[InlineKeyboardButton("🐞 Report bugs", callback_data="report_errors")]])
-    text = "An error has accured!\n\n```{}```\n".format("".join(errors))
+    text = "An error has occurred!\n\n```{}```\n".format("".join(errors))
     if errtype == ModuleNotFoundError:
         text += "\nHint: Try this in your terminal `pip install -r requirements.txt`"
     await butler.send_message(Owner, text, reply_markup=button)
